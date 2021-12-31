@@ -1,0 +1,35 @@
+$DarkBlue : hsl(209, 23%, 22%);
+
+$White: hsl(0, 0%, 100%);
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 8px 11px -7px rgba(0,0,0,0.55);
+    padding: 1rem 4rem;
+
+     h1{
+         font-size: 25px;
+         margin: 0;
+     }
+
+     .mode-Container{
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: space-between;
+         cursor: pointer;
+
+         img{
+             width: 22px;
+             height: 22px;
+             padding: 1rem;
+         }
+
+         h2{
+             font-size: 16px;
+         }
+     }
+}

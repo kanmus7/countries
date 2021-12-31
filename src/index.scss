@@ -1,0 +1,62 @@
+//Dark mode elements
+ $DarkBlue : hsl(209, 23%, 22%);
+
+ //Dark mode background 
+$VeryDarkBlue: hsl(207, 26%, 17%);
+
+//Light mode text
+$VeryDarkBlueL: hsl(200, 15%, 8%);
+
+//Light mode input
+$DarkGray : hsl(0, 0%, 52%);
+
+//Light mode background
+$VeryLightGray : hsl(0, 0%, 98%);
+
+//Dark mode text & light mode elements
+$White: hsl(0, 0%, 100%);
+
+html,body{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+
+.letter-white{
+    color: $White;
+}
+
+.letter-black{
+    color: $VeryDarkBlueL;
+}
+
+.background-black{
+    background-color: $DarkBlue;
+}
+
+.background-black::placeholder{
+    color: $White;
+    font-weight: 500;
+}
+
+.background-white{
+    background-color: $White;
+}
+
+.background-white::placeholder{
+    font-weight: 500;
+}
+
+.Bodybackground-black{
+    background-color: $VeryDarkBlue;
+}
+
+.Bodybackground-white{
+    background-color: $VeryLightGray;
+}
