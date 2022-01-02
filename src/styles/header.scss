@@ -1,3 +1,4 @@
+
 $DarkBlue : hsl(209, 23%, 22%);
 
 $White: hsl(0, 0%, 100%);
@@ -32,4 +33,12 @@ header{
              font-size: 16px;
          }
      }
+}
+
+.moonLight {
+    filter: invert(1);
+}
+
+.moonDark {
+    filter: invert(0);
 }
