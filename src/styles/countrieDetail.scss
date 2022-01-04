@@ -1,0 +1,87 @@
+section{
+    height: inherit;
+    width: auto;
+
+    a{
+        text-decoration: none;
+    }
+
+    .back-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 5px 2rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 15px;
+        letter-spacing: 0.3px;
+        font-weight: 500;
+        box-shadow: 0px 0px 4px 2px rgb(0 0 0 / 14%);
+        width: 100%;
+        max-width: 80px;
+    }
+}
+
+
+.searchImgLight{
+    filter: invert(1);
+}
+
+.searchImgDark{
+    filter: invert(0);
+}
+
+.details-container{
+    padding: 3rem 0 ;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.imgFlag-container{
+    img{
+        width: 700px;
+        height: 450px;
+    }
+}
+
+.countrieInfoDetail-container{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin-left: 8rem;
+
+    h1{
+        text-align: left;
+        font-size: 27px;
+    }
+
+    .info-container{
+        display: flex;
+        flex-direction: row;
+
+        ul > li {
+            list-style: none;
+            margin-top: 12px;
+            font-size: 18px;
+        }
+    }
+}
+
+.info1-ul{
+    padding: 0;
+}
+
+.borders{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    h2{
+        font-size: 18px;
+        font-weight: 500;
+    }
+}

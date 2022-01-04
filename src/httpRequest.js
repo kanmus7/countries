@@ -9,13 +9,15 @@ const getCountries = async (setCountriesData) => {
     }
 }
 
-//get by id
-const getCountriesById = async (setCountriesData, id) => {
+//get countrie by name
+const getCountriesByName = async (setCountrieDetail, name) => {
     try {
-
+        const response = await fetch(`https://restcountries.com/v2/name/${name}`)
+        const data = await response.json()
+        setCountrieDetail(data)
     } catch (error) {
-        setCountriesData([])
+        setCountrieDetail([])
     }
 }
 
-export { getCountries }
+export { getCountries, getCountriesByName }

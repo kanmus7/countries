@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import Header from "./components/Header";
+import { Routes, Route } from "react-router-dom";
 import Main from "./components/Main";
+import Details from './components/Details'
+import Error from './components/Error'
 
 
 function App() {
@@ -9,10 +11,11 @@ function App() {
   const isModeBackgrounds = mode ? 'background-black' : 'background-white'
   const isModeBodyBackground = mode ? 'Bodybackground-black' : 'Bodybackground-white'
   return (
-    <>
-      <Header mode={mode} setMode={setMode} isModeLetters={isModeLetters} isModeBackgrounds={isModeBackgrounds} />
-      <Main isModeBodyBackground={isModeBodyBackground} isModeBackgrounds={isModeBackgrounds} isModeLetters={isModeLetters} mode={mode}/>
-    </>
+    <Routes>
+      <Route path='/' element={<Main mode={mode} setMode={setMode} isModeLetters={isModeLetters} isModeBackgrounds={isModeBackgrounds} isModeBodyBackground={isModeBodyBackground} />} />
+      <Route path='/CountrieDetail/:name' element={<Details mode={mode} setMode={setMode} isModeLetters={isModeLetters} isModeBackgrounds={isModeBackgrounds} isModeBodyBackground={isModeBodyBackground}/>} />
+      <Route path='*' element={<Error />} />
+    </Routes>
   )
 }
 

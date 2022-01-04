@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Countrie = ({ countrie, isModeLetters, isModeBackgrounds }) => {
+const Countrie = ({ countrie,isModeLetters, isModeBackgrounds }) => {
     return (
-        <div className={`countrie-container  ${isModeBackgrounds}`}>
+        <Link  to={`/CountrieDetail/${countrie.name}`}>
+        <div  className={`countrie-container  ${isModeBackgrounds}`}>
             <div className='img-container'>
                 <img src={countrie.flags.svg} alt="imgFlag" />
             </div>
@@ -13,6 +15,7 @@ const Countrie = ({ countrie, isModeLetters, isModeBackgrounds }) => {
                 <p className={`countriInfo ${isModeLetters}`}>{`Capital: ${countrie.capital || 'Not found'}`}</p>
             </div>
         </div>
+        </Link>
     )
 }
 
