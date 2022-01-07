@@ -1,18 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/countrieDetail.scss'
 import arrow from '../img/arrow.svg'
-import notFound from '../img/NotFound.jpg'
 import { Link } from 'react-router-dom'
 import { getCountriesByName } from '../httpRequest'
 
 
-const CountrieDetail = ({ name, isModeLetters, isModeBackgrounds, mode, isModeBodyBackground }) => {
+const CountrieDetail = ({ countriesData, name, isModeLetters, isModeBackgrounds, mode, isModeBodyBackground }) => {
     const [countrieDetail, setCountrieDetail] = useState([])
 
     useEffect(() => {
         getCountriesByName(setCountrieDetail, name)
     }, [])
-    const countrie = countrieDetail[0]
+    const countrie = countrieDetail[0]    
+
+    const bordersName = (border) => {   
+        let bordersName = []
+        if(countriesData){
+            const countriesBorder = countriesData.filter(countrie =>  countrie.alpha3Code === border)
+             bordersName = countriesBorder.map(bor => bor.name)            
+        }  
+        return bordersName[0]
+    }
+
 
     return (
         <section className={`sectionDetail-container ${isModeBodyBackground}`}>
@@ -52,14 +61,15 @@ const CountrieDetail = ({ name, isModeLetters, isModeBackgrounds, mode, isModeBo
                             </ul>
                         </div>
                     </div>
-                     <div className={`borders ${isModeLetters}`}>
-                         <h2>Border Countries :</h2>
-                         <div className='borders-links'>
-                        {countrie && countrie.borders.map(border => (
-                            <button className={`${isModeBackgrounds}`} type='button'>{border}</button>
-                        ))}
-                         </div>
-                    </div> 
+                    <div className={`borders ${isModeLetters}`}>
+                        <h2>Border Countries :</h2>
+                        <div className='borders-links'>
+                            {countrie && countrie.borders? countrie.borders.map(border => {
+                               const borderName = bordersName(border)
+                               return <Link className={`borderCountries ${isModeLetters} ${isModeBackgrounds}`} to='/'>{borderName}</Link> 
+                            }): 'No borders'}
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

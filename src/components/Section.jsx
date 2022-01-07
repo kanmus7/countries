@@ -5,12 +5,11 @@ import Countries from './Countries'
 import Countrie from './Countrie'
 import { getCountries } from '../httpRequest'
 
-const Section = ({ isModeBodyBackground, isModeBackgrounds, isModeLetters, mode }) => {
-    const [countriesData, setCountriesData] = useState([])
+const Section = ({ countriesData, setCountriesData, isModeBodyBackground, isModeBackgrounds, isModeLetters, mode }) => {
     const [searchCountrie, setSearchCountrie] = useState('')
     const [searchForRegion, setsearchForRegion] = useState('')
     const style = {
-        height: searchCountrie || (searchForRegion && (searchForRegion === 'Polar' || searchForRegion === 'Antarctic Ocean' || searchForRegion === 'Antarctic'))? '100%':'auto'
+        height: searchCountrie || (searchForRegion && (searchForRegion === 'Polar' || searchForRegion === 'Antarctic Ocean' || searchForRegion === 'Antarctic')) ? '100%' : 'auto'
     }
 
     useEffect(() => {
