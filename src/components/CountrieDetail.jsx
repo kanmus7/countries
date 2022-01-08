@@ -7,19 +7,22 @@ import { getCountriesByName } from '../httpRequest'
 
 const CountrieDetail = ({ countriesData, name, isModeLetters, isModeBackgrounds, mode, isModeBodyBackground }) => {
     const [countrieDetail, setCountrieDetail] = useState([])
-
     useEffect(() => {
         getCountriesByName(setCountrieDetail, name)
     }, [])
-    const countrie = countrieDetail[0]    
+    const countrie = countrieDetail[0]
 
-    const bordersName = (border) => {   
+    const bordersName = (border) => {
         let bordersName = []
-        if(countriesData){
-            const countriesBorder = countriesData.filter(countrie =>  countrie.alpha3Code === border)
-             bordersName = countriesBorder.map(bor => bor.name)            
-        }  
+        if (countriesData) {
+            const countriesBorder = countriesData.filter(countrie => countrie.alpha3Code === border)
+            bordersName = countriesBorder.map(bor => bor.name)
+        }
         return bordersName[0]
+    }
+
+    const changeCountrieDetail = (borderName) => {
+        getCountriesByName(setCountrieDetail, borderName)
     }
 
 
@@ -64,10 +67,10 @@ const CountrieDetail = ({ countriesData, name, isModeLetters, isModeBackgrounds,
                     <div className={`borders ${isModeLetters}`}>
                         <h2>Border Countries :</h2>
                         <div className='borders-links'>
-                            {countrie && countrie.borders? countrie.borders.map(border => {
-                               const borderName = bordersName(border)
-                               return <Link className={`borderCountries ${isModeLetters} ${isModeBackgrounds}`} to='/'>{borderName}</Link> 
-                            }): 'No borders'}
+                            {countrie && countrie.borders ? countrie.borders.map(border => {
+                                const borderName = bordersName(border)
+                                return <Link onClick={() => changeCountrieDetail(borderName)} className={`borderCountries ${isModeLetters} ${isModeBackgrounds}`} to={`/CountrieDetail/${borderName}`}>{borderName}</Link>
+                            }) : 'No borders'}
                         </div>
                     </div>
                 </div>
