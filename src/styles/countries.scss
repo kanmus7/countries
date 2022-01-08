@@ -1,7 +1,9 @@
 .countries-container{
     display: grid;
-    grid-template-columns: repeat(4,5fr);
+    grid-template-columns: repeat(auto-fit, 420px);
     margin-top: 3rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .countrie-container{

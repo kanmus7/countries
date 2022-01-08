@@ -18,7 +18,7 @@ const Section = ({ countriesData, setCountriesData, isModeBodyBackground, isMode
 
 
     return (
-        <section style={style} className={isModeBodyBackground}>
+        <section style={style} className={`section ${isModeBodyBackground}`}>
             <Filters
                 isModeBackgrounds={isModeBackgrounds} isModeLetters={isModeLetters}
                 mode={mode} setSearchCountrie={setSearchCountrie}
