@@ -3,6 +3,7 @@
 
    html, body{
         height: auto;
+        min-width: 345px;
     }
 
     #root{
@@ -22,10 +23,22 @@
             width: auto;
             margin-right: 1rem;
             margin-left: 1rem;
+
+            input{
+                width: auto;
+            }
         }
     }
+
+    .countries-container{
+        width: auto;
+        a{
+            max-width: 390px;
+        }
+    }
+
     .countrie-container{
         margin-bottom: 1rem;
-        margin-left: 45px;
+        margin-left: 50px;
     }
 }
