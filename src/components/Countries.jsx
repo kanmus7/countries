@@ -19,7 +19,7 @@ const Countries = (props) => {
     }
     return (
         <div className='countries-container'>
-             {countries.map((countrie, i) => props.render(countrie, i))}
+            {!countries? (<h2 className={`loadingTitle ${props.isModeLetters}`}>Cargando...</h2>): countries.map((countrie, i) => props.render(countrie, i))}
         </div>
     )
 }

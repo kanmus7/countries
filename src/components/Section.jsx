@@ -28,6 +28,7 @@ const Section = ({ countriesData, setCountriesData, isModeBodyBackground, isMode
                 countriesData={countriesData}
                 searchCountrie={searchCountrie}
                 searchForRegion={searchForRegion}
+                isModeLetters = {isModeLetters}
                 render={(countrie, i) => (
                     <Countrie
                         key={i}

@@ -4,6 +4,7 @@ import App from './App';
 import './index.scss'
 import { BrowserRouter } from "react-router-dom";
 import './styles/mobileMainDesing.scss'
+import './styles/mobileDetailDesing.scss'
 
 
 ReactDOM.render(
