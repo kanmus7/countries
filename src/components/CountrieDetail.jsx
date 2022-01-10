@@ -28,7 +28,7 @@ const CountrieDetail = ({ countriesData, name, isModeLetters, isModeBackgrounds,
 
     return (
         <section className={`sectionDetail-container ${isModeBodyBackground}`}>
-            <Link to='/'>
+            <Link to='/countries'>
                 <div className={`back-container ${isModeLetters} ${isModeBackgrounds}`}>
                     <img className={mode ? 'searchImgLight' : 'searchImgDark'} src={arrow} alt="arrowBack-img" />
                     Back

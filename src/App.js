@@ -13,7 +13,7 @@ function App() {
   const isModeBodyBackground = mode ? 'Bodybackground-black' : 'Bodybackground-white'
   return (
     <Routes>
-      <Route path='/' element={<Main countriesData={countriesData} setCountriesData={setCountriesData} mode={mode} setMode={setMode} isModeLetters={isModeLetters} isModeBackgrounds={isModeBackgrounds} isModeBodyBackground={isModeBodyBackground} />} />
+      <Route path='/countries' element={<Main countriesData={countriesData} setCountriesData={setCountriesData} mode={mode} setMode={setMode} isModeLetters={isModeLetters} isModeBackgrounds={isModeBackgrounds} isModeBodyBackground={isModeBodyBackground} />} />
       <Route path='/CountrieDetail/:name' element={<Details countriesData={countriesData} mode={mode} setMode={setMode} isModeLetters={isModeLetters} isModeBackgrounds={isModeBackgrounds} isModeBodyBackground={isModeBodyBackground} />} />
       <Route path='*' element={<Error />} />
     </Routes>
