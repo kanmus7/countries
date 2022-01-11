@@ -8,7 +8,7 @@ const Countries = (props) => {
     countries = findCountrie(countries)
 
     function findCountrie (countries) {
-        return countries.filter((countrie) => countrie.name.toLowerCase().indexOf(props.searchCountrie) > -1) 
+        return countries.filter((countrie) => countrie.name.toLowerCase().indexOf(props.searchCountrie.toLowerCase()) > -1) 
     }
 
     function findCountriesByRegion (countries){
